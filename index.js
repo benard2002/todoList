@@ -28,13 +28,13 @@ let items = [
 async function getItems() {
   const result = await db.query("SELECT * FROM items ORDER BY id ASC");
   
-  return items = result.rows;
+  result.rows;
   
 }
 
 app.get("/", async (req, res) => {
-  console.log(await getItems());
   
+  items = await getItems()
   res.render("index.ejs", {
     listTitle: "Today",
     listItems: items,
